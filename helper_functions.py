@@ -3,6 +3,8 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import TweetTokenizer
 from nltk.corpus import stopwords
 import re
+import numpy as np
+from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
 ################# File Input/ Output Operations #################
 def save_object(obj, path): 
@@ -33,3 +35,19 @@ def data_cleaning(texts):
                 lemmatized_tokens.append(lemmatized_token)
         clean_text.append(' '.join(lemmatized_tokens))
     return clean_text
+
+################# Results, Analysis, and Evaluation #################
+
+def evaluate(y_true, y_pred): 
+    """ Return accuracy and f1"""
+    print(f"Accuracy: {accuracy_score(y_true, y_pred)}")
+    print(f"F1: {f1_score(y_true, y_pred)}")
+    print(f"Precision: {precision_score(y_true, y_pred)}")
+    print(f"Recall: {recall_score(y_true, y_pred)}")
+    return None
+    
+def prediction_probs_to_target(predictions): 
+    targets = []
+    for row in predictions: 
+        targets.append(np.argmax(row))
+    return targets
