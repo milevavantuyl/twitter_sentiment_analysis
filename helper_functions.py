@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 import re
 import numpy as np
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
 ################# File Input/ Output Operations #################
 def save_object(obj, path): 
@@ -38,14 +39,20 @@ def data_cleaning(texts):
 
 ################# Results, Analysis, and Evaluation #################
 
+def plot_confusion_matrix(y_true, y_pred): 
+    """ Plot the confusion matrix """
+    disp = ConfusionMatrixDisplay.\
+        from_predictions(y_true, y_pred, normalize = 'true', cmap = "Blues")
+    
 def evaluate(y_true, y_pred): 
     """ Return accuracy and f1"""
     print(f"Accuracy: {accuracy_score(y_true, y_pred)}")
     print(f"F1: {f1_score(y_true, y_pred)}")
     print(f"Precision: {precision_score(y_true, y_pred)}")
     print(f"Recall: {recall_score(y_true, y_pred)}")
+    plot_confusion_matrix(y_true, y_pred)
     return None
-    
+
 def prediction_probs_to_target(predictions): 
     targets = []
     for row in predictions: 
