@@ -26,5 +26,5 @@ To successfully run the code perform the following steps
 ## Contents
 
 The project contains one jupyter notebook and one python file 
-- HateSpeechAnalysis.ipynb: Main functionality. Contains the data cleaning, the models training and the evaluation, as stated above.
-- helper_functions.py: Library including some transversal functions needed along the code.
+- <b>HateSpeechAnalysis.ipynb:</b> Main functionality. Contains the data cleaning, the models training and the evaluation, as stated above.
+- <b>helper_functions.py:</b> Library including some transversal functions needed along the code.
