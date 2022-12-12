@@ -30,7 +30,9 @@ To successfully run the code perform the following steps:
 The project contains one jupyter notebook and one python file 
 - <b>HateSpeechAnalysis.ipynb:</b> Main functionality. Contains the data cleaning, the models training and the evaluation, as stated above.
 - <b>helper_functions.py:</b> Library including some transversal functions needed along the code.
-- <b>SampleIO.mp4:</b> A description of the sample input and output
+- <b>SampleIO.mp4:</b> A description of the sample input and output.
 - <b>Sentiment Analysis On Hate Speech Presentation.pptx:</b> PowerPoint presentation.
+- <b>FinalProject_Report_SanchezVanTuyl.pdf:</b> Report.
+
 
 The associated presentation is not included in this repository as it was presented on December 8, 2022. 
